@@ -134,4 +134,4 @@ Instructors are assigned based on department expertise but can teach multiple co
 Billing and Prerequisites (if added) are optional extensions for real-world system needs.
 
 ## Result:
-Thus, the ER diagram for the hospital management system was successfully designed, and the entities, relationships, and constraints were clearly represented.
+Thus, the ER diagram for the university database system was successfully designed, and the entities, relationships, and constraints were clearly represented.
