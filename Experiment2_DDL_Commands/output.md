@@ -157,6 +157,7 @@ RENAME COLUMN id to employee_id;
 ```
 
 **Output:**
+
 ![image](https://github.com/user-attachments/assets/17107842-5884-48b0-93b7-4ff2735803da)
 
 **Question 10**
@@ -170,5 +171,6 @@ ADD COLUMN "Mobilenumber" number;
 ```
 
 **Output:**
+
 ![image](https://github.com/user-attachments/assets/b1cac1ba-e129-4e7d-a61a-cab95726a106)
 
