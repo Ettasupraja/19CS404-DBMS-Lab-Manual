@@ -174,3 +174,5 @@ ADD COLUMN "Mobilenumber" number;
 
 ![image](https://github.com/user-attachments/assets/b1cac1ba-e129-4e7d-a61a-cab95726a106)
 
+**RESULT:**
+Thus, the SQL queries to implement different types of constraints and DDL commands have been executed successfully.
