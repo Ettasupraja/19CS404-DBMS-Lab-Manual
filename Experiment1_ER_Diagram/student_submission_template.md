@@ -9,119 +9,129 @@ University
 
 ## ER Diagram:
 ## University Database:
-![Screenshot 2025-04-27 223343](https://github.com/user-attachments/assets/9e9cb47a-1cf3-4c2a-b7ef-215ee642138e)
+![Screenshot 2025-04-28 110955 1](https://github.com/user-attachments/assets/12ea772f-3555-4e46-bf17-b9a6fff75b35)
 
+![WhatsApp Image 2025-04-28 at 11 18 03_2c3a94ea](https://github.com/user-attachments/assets/315e419e-4c31-4571-9dc0-cbfaa87127b8)
 
 
 ## Entities and Attributes:
 
-### DEPARTMENT:
+- Department - Dept id, Dept name, Head of Department
+- Program - Program id, Program name
+- Student - Student id, Date of birth, Email, Name, Phone number
+- Course - Credits, Department, Course id, Course name, Course description
+- Instructor - Name, Department, Mobile number, Office location, Email, Instructor id
 
-ID
+...
 
-NAME
+## Relationships and Constraints:
+Relationship 1: Department - Program
+Cardinality: 1 Department → many Programs (1:N)
 
-### PROGRAM:
+Participation:
 
-ID
+Department: Total
 
-NAME
+Program: Total
 
-DEPT_ID
+Relationship 2: Program - Student
+Cardinality: 1 Program → many Students (1:N)
 
-### STUDENT:
+Participation:
 
-ID
+Program: Total
 
-NAME
+Student: Total
 
-PHONE_NO
+Relationship 3: Student - Course (Enrolled in)
+Cardinality: Many Students → Many Courses (M:N)
 
-EMAIL
+Participation:
 
-DATE_OF_BIRTH
+Student: Partial
 
-### PROGRAM_ID
+Course: Partial
 
-FACULTY:
+Relationship 4: Course - Instructor (Taught by)
+Cardinality: 1 Instructor → many Courses (1:N)
 
-ID
 
-NAME
+Participation:
 
-EMAIL
+Instructor: Partial
 
-PHONE_NO
-
-### COURSE:
-
-ID
-
-NAME
-
-CREDIT
-
-PROGRAM_ID
-
-### PRE REQUEST (seems to represent prerequisites for courses):
-
-COURSE_ID
-
-PREREQ_COURSE_ID
-
-### ENROLLMENT:
-
-ID
-
-ENROLLMENT_DATE
-
-COURSE_ID
-
-STUDENT_ID
-
-### Relationships and Constraints:
-
-OFFER (DEPARTMENT —> PROGRAM)
-
-1 Department offers many Programs
-
-(1, M)
-
-CONSIST (PROGRAM —> COURSE)
-
-1 Program consists of many Courses
-
-(1, M)
-
-HAVE (COURSE —> PRE REQUEST)
-
-1 Course has many Prerequisites
-
-(1, M)
-
-TEACHER (COURSE —> FACULTY)
-
-1 Course is taught by 1 Faculty
-
-(M, 1)
-
-ENROLL (PROGRAM —> STUDENT)
-
-1 Program enrolls many Students
-
-(1, M)
-
-ENROLL (STUDENT <—> ENROLLMENT <—> COURSE)
-
-Many Students enroll in many Courses (through ENROLLMENT)
-
-(M, M)
+Course: Partial
+...
 
 ## Extension (Prerequisite / Billing):
-- Explain how you modeled prerequisites or billing.
+Extension (Prerequisite / Billing):
+1. Prerequisite Modeling:
+Idea: Some courses may require students to complete other courses first.
+
+Modeling:
+
+Add a "Prerequisite" relationship between Course and Course itself.
+
+It will be a binary relationship like:
+
+One Course (prerequisite) → another Course (dependent).
+
+Cardinality:
+
+0 or 1 prerequisite for a course (Optional, 0:1).
+
+2. Billing Modeling:
+Idea: Students pay based on enrolled courses (credits or fixed fees).
+
+Modeling:
+
+Add a Billing entity.
+
+Connect Student ↔ Billing and Course ↔ Billing.
+
+Billing will store:
+
+Billing ID
+
+Amount
+
+Payment Date
+
+Payment Status
+
+Cardinality:
+
+1 Student → Many Billing Records (1:N)
+
+1 Course → Many Billing Records (1:N)
+
+
 
 ## Design Choices:
-Brief explanation of why you chose certain entities, relationships, and assumptions.
+Design Choices:
+Entities like Department, Program, Student, Course, and Instructor were chosen because they represent real-world objects we need to track separately, each with their own properties (attributes).
+
+Relationships like offers, enrolled by, enrolled in, and taught by were used to properly connect the entities:
+
+Department offers Program: Logical because programs are under departments.
+
+Program enrolled by Student: Students must belong to a program.
+
+Student enrolled in Course: Students register for multiple courses.
+
+Course taught by Instructor: Instructors are responsible for teaching courses.
+
+Assumptions:
+
+Every Program must belong to exactly one Department.
+
+A Student must be enrolled in one Program but can enroll in multiple Courses.
+
+Each Course must belong to a Department.
+
+Instructors are assigned based on department expertise but can teach multiple courses.
+
+Billing and Prerequisites (if added) are optional extensions for real-world system needs.
 
 ## Result:
 Thus, the ER diagram for the hospital management system was successfully designed, and the entities, relationships, and constraints were clearly represented.
