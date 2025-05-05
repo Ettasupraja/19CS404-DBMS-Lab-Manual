@@ -186,4 +186,5 @@ WHERE grade = (
 ![WhatsApp Image 2025-05-05 at 10 57 25_f7cd52b6](https://github.com/user-attachments/assets/a2d0f8c4-de63-425a-92d8-039ffcbd37f7)
 
 **RESULT**
+
 Thus, the SQL queries to implement subqueries and views have been executed successfully.
