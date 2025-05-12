@@ -1,26 +1,69 @@
-# ER DIAGRAM
+# Experiment 1: Entity-Relationship (ER) Diagram
 
-## Ex.no:1
-## Name: ETTA SUPRAJA
-## Register no: 212223220022
+## 🎯 Objective:
+To understand and apply the concepts of ER modeling by creating an ER diagram for a real-world application.
+
+## 📚 Purpose:
+The purpose of this workshop is to gain hands-on experience in designing ER diagrams that visually represent the structure of a database including entities, relationships, attributes, and constraints.
+
+---
+
+## 🧪 Choose One Scenario:
+
+### 🔹 Scenario 1: University Database
+Design a database to manage students, instructors, programs, courses, and student enrollments. Include prerequisites for courses.
+
+**User Requirements:**
+- Academic programs grouped under departments.
+- Students have admission number, name, DOB, contact info.
+- Instructors with staff number, contact info, etc.
+- Courses have number, name, credits.
+- Track course enrollments by students and enrollment date.
+- Add support for prerequisites (some courses require others).
+
+---
+
+### 🔹 Scenario 2: Hospital Database
+Design a database for patient management, appointments, medical records, and billing.
+
+**User Requirements:**
+- Patient details including contact and insurance.
+- Doctors and their departments, contact info, specialization.
+- Appointments with reason, time, patient-doctor link.
+- Medical records with treatments, diagnosis, test results.
+- Billing and payment details for each appointment.
+
+---
+
+## 📝 Tasks:
+1. Identify entities, relationships, and attributes.
+2. Draw the ER diagram using any tool (draw.io, dbdiagram.io, hand-drawn and scanned).
+3. Include:
+   - Cardinality & participation constraints
+   - Prerequisites for University OR Billing for Hospital
+4. Explain:
+   - Why you chose the entities and relationships.
+   - How you modeled prerequisites or billing.
+
+# ER Diagram Submission - Student Name
 
 ## Scenario Chosen:
-University 
+University / Hospital (choose one)
 
 ## ER Diagram:
-## University Database:
-![Screenshot 2025-04-28 110955 1](https://github.com/user-attachments/assets/12ea772f-3555-4e46-bf17-b9a6fff75b35)
+![image](https://github.com/user-attachments/assets/4b0b0f45-9a8e-4821-abcb-81aa103907a7)
+![image](https://github.com/user-attachments/assets/28f9582c-14b2-43cc-97a4-d99d7b20824f)
 
-![WhatsApp Image 2025-04-28 at 11 18 03_2c3a94ea](https://github.com/user-attachments/assets/315e419e-4c31-4571-9dc0-cbfaa87127b8)
 
 
 ## Entities and Attributes:
-
+...
 - Department - Dept id, Dept name, Head of Department
 - Program - Program id, Program name
 - Student - Student id, Date of birth, Email, Name, Phone number
 - Course - Credits, Department, Course id, Course name, Course description
 - Instructor - Name, Department, Mobile number, Office location, Email, Instructor id
+
 
 ...
 
@@ -64,7 +107,7 @@ Course: Partial
 ...
 
 ## Extension (Prerequisite / Billing):
-Extension (Prerequisite / Billing):
+-Extension (Prerequisite / Billing):
 1. Prerequisite Modeling:
 Idea: Some courses may require students to complete other courses first.
 
@@ -106,7 +149,6 @@ Cardinality:
 1 Course → Many Billing Records (1:N)
 
 
-
 ## Design Choices:
 Design Choices:
 Entities like Department, Program, Student, Course, and Instructor were chosen because they represent real-world objects we need to track separately, each with their own properties (attributes).
@@ -133,5 +175,6 @@ Instructors are assigned based on department expertise but can teach multiple co
 
 Billing and Prerequisites (if added) are optional extensions for real-world system needs.
 
-## Result:
-Thus, the ER diagram for the university database system was successfully designed, and the entities, relationships, and constraints were clearly represented.
+
+## RESULT
+Hence, the concepts of ER modeling is understood and applied by creating an ER diagram for a real-world application.
